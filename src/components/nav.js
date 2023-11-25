@@ -10,13 +10,13 @@ export function Nav() {
         </div>
         <div className="user-container">
             <Image 
-                src="circle-user-solid.svg"
+                src="icons/circle-user-solid.svg"
                 width={30}
                 height={30}
                 alt="User Icon"
             />
             <Image 
-                src="bars-solid.svg"
+                src="icons/bars-solid.svg"
                 width={20}
                 height={20}
                 alt="Menu Icon"
