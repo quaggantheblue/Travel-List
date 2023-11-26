@@ -1,0 +1,13 @@
+.search-content {
+    margin-top: 4rem;
+    height: 94%;
+    justify-content: start;
+}
+
+.search-content > h1 {
+    margin: 2.5rem 0rem 1rem 0rem;
+}
+
+.search-result {
+    list-style-type: none;
+}

@@ -1,5 +1,9 @@
 .search-input-container {
     width: 60%;
+}
+
+.search-form{
+    width: 100%;
     border: 1px solid var(--light-gray);
     border-radius: 32px;
     display: grid;
@@ -19,7 +23,7 @@
     outline: none;
 }
 
-.search-input-container > button {
+.search-form > button {
     padding-top: 4px;
     background-color: white;
     border: none;
