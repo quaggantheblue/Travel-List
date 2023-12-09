@@ -1,0 +1,76 @@
+.city-content {
+  height: 100%;
+  margin-top: 5rem;
+  margin-left: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.city-info {
+  justify-content: start;
+}
+
+.city-label {
+  width: 100%;
+  align-items: start;
+  justify-content: start;
+}
+
+.city-main {
+  align-items: start;
+  gap: 1.4rem;
+}
+
+.city-time,
+.city-names {
+  font-size: 50px;
+  margin-left: 1rem;
+}
+
+.city-map {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 3rem;
+}
+
+gmp-map {
+  height: 53rem;
+  width: 50rem;
+}
+
+.flag-large {
+  height: 200px;
+  margin-top: -2rem;
+}
+
+.city-weather-section {
+  align-items: start;
+  width: 100%;
+  gap: 1rem;
+}
+
+.city-weather-section > h1 {
+  font-size: 50px;
+  margin-top: 4rem;
+  margin-left: .8rem;
+  width: 100%;
+}
+
+.forecast {
+  margin-top: 5rem;
+  width: 100%;
+  gap: 1rem;
+}
+
+.weather-text,
+.weather-temperature {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.city-weather {
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  width: 100%;
+  justify-content: space-around;
+}

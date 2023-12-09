@@ -2,6 +2,11 @@
     margin: 0;
 
     --light-gray: rgb(218, 218, 218);
+    --coyote: #7A6C5D;
+    --charcoal: #2A3D45;
+    --dun: #DDC9B4;
+    --khaki: #BCAC9B;
+    --rose: #C17C74;
 }
 
 body {

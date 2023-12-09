@@ -5,7 +5,6 @@ export function Nav() {
     return <nav id="navbar">
         <div className="link-container">
             <Link className="nav-link" href="/">Home</Link>
-            <Link className="nav-link" href="search">Search</Link>
             <Link className="nav-link" href="favourites">Favourites</Link>
         </div>
         <div className="user-container">
