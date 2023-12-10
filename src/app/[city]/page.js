@@ -1,10 +1,14 @@
 "use client";
 
 import { Nav } from "@/components/nav";
+import { addToDatabase, findAndDelete, findById } from "@/lib/mongo";
 import fetchWeatherResults from "@/lib/weather";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function City( { params } ) {
+    const [favorite, setFavorite] = useState(false);
+    const [icon, setIcon] = useState("icons/star-regular.svg");
     const [city, setCity] = useState({});
     const [weather, setWeather] = useState({});
 
@@ -33,6 +37,46 @@ export default function City( { params } ) {
         setWeather(await fetchWeatherResults(`${city.name}, ${city.admin1}`));
     }
 
+    useEffect( () => {
+        checkFavorite();
+    }, [city]);
+
+    const checkFavorite = async () => {
+        const favorites = await findById(city.id);
+        if (favorites.length != 0) {
+            // city is in favorites
+            setFavorite(true);
+            setIcon("icons/star-solid.svg")
+        } else {
+            // city is not in favorites
+        }
+    }
+
+    const handleFavorite = async () => {
+        if (!favorite) {
+            setFavorite(true);
+            setIcon("icons/star-solid.svg");
+            // add to database
+
+            const data = {
+                flag: `https://flagsapi.com/${city.country_code}/flat/64.png`,
+                country: city.country,
+                name: city.name,
+                country_code: city.country_code,
+                id: city.id
+            }
+
+            await addToDatabase(data);
+        }
+        if (favorite) {
+            setFavorite(false);
+            setIcon("icons/star-regular.svg");
+            // remove from database
+
+            await findAndDelete(city.id);
+        }
+    }
+
     return <>
         <Nav />
 
@@ -46,6 +90,14 @@ export default function City( { params } ) {
                             {weather?.location?.localtime.split(" ").splice(1, 1).join("")}
                         </div>
                     </div>
+                    <button onClick={handleFavorite} className="favorite-button city-page">
+                        <Image 
+                            src={icon}
+                            width={30}
+                            height={30}
+                            alt="Search"
+                        />
+                    </button>
                 </div>
                 <div className="city-weather-section center-column">
                     <h1>Weather</h1>

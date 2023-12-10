@@ -74,3 +74,19 @@ gmp-map {
   width: 100%;
   justify-content: space-around;
 }
+
+.favorites-container {
+  margin-top: 2rem;
+  width: 96%;
+}
+
+.favorites-header {
+  margin-top: 5rem;
+  margin-left: 2.3rem;
+  font-size: 40px;
+}
+
+.city-page {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}

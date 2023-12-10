@@ -29,17 +29,3 @@
 .nav-link:hover {
     background-color: var(--light-gray);
 }
-
-.user-container {
-    width: 4.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    gap: .2rem
-}
-
-.user-container:hover {
-    background-color: var(--light-gray);
-    cursor: pointer;
-}
